@@ -1,53 +1,68 @@
 <html>
  <head>
   <title>Homepage</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
  </head>
     
  <body>
 
-<?php
-    $conn = mysqli_connect("localhost", "root", "", "envestdb");
-
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-?>
+<?php include("database.php"); ?>
+          
+<br><br>
      
+<div class="container ">
 <center>
-    <table>
-    <tr>
-        <td>COMPONENTS</td>
-    </tr>
-    <tr>
-        <td>Component Name</td>
-        <td>Stock</td>
-        <td>Price</td>
-        <td>Currency</td>
-    </tr>
     
-<?php    
-    //Show components table
+<div class="col-md-8">
     
-    $components=mysqli_query($conn,"SELECT * FROM components");
+    <h4>Add Component</h4>
     
-    while($component=mysqli_fetch_array($components)){
+    <form action="" method="post" >
     
-        $componentname = $component['componentName'];
-        $stock= $component['stock'];
-        $price=$component['price'];
-        $currency=$component['currency'];
-            
-        echo "<tr>
-            <td>$componentname</td>
-            <td>$stock</td>
-            <td>$price</td>
-            <td>$currency</td>
-            </tr>";         
-    }
-?>                 
-</table>
-</center>
+        <table class="table">    
+            <tr>
+                <td>Component Name</td>
+                <td><input type="text" name="componentname" class="form-control" ></td>
+            </tr>
+            <tr>
+                <td>Stock</td>
+                <td><input type="number" name="stock" class="form-control" ></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="number" name="price" class="form-control" ></td>
+            </tr>        
+            <tr>
+                <td>Currency</td>
+                <td>
+                    <select style="width:180px;" name="currency"  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <option class="dropdown-item"  value="">Select Currency</option>
+                        <option class="dropdown-item"  value="TRY">TRY</option>
+                        <option class="dropdown-item" value="USD">USD</option>
+                        <option class="dropdown-item" value="EUR">EUR</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input class="btn btn-primary"  type="submit" value="Add Component" name="add"></td>
+            </tr>
+        </table>
 
-
-</body>
+    </form>
+    
+    <?php include("addcomponent.php"); ?>
+    
+</div>    
+    
+    <?php include("components.php"); ?>
+    
+            </center>
+        </div>
+    </body>
 </html>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
