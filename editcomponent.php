@@ -70,7 +70,7 @@
 
             mysqli_query($conn,$edit); 
 
-            echo "<script type='text/javascript'>alert('Component Updated Succesfully.');</script>";
+            echo "<script type='text/javascript'>alert('Component Succesfully Updated.');</script>";
             
             header("location:homepage.php"); 
 

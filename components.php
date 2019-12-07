@@ -33,7 +33,7 @@
                      <td><?php echo $price ?></td>
                      <td><?php echo $currency ?></td>
                      <td><a href="editcomponent.php?id=<?php echo $componentid; ?>" class="btn btn-primary" style="width:80px;">Edit</a></td>
-                     <td><a href="deletecomponent.php?id=<?php echo $componentid; ?>" class="btn btn-danger">Delete</a></td>
+                     <td><a href="deletecomponent.php?id=<?php echo $componentid; ?>" class="btn btn-danger"  onclick="return window.confirm('Are you sure delete this component?');">Delete</a></td>
                  </tr> 
                  </form><?php         
                  }
