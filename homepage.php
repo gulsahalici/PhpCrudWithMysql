@@ -35,7 +35,7 @@
             <tr>
                 <td>Currency</td>
                 <td>
-                    <select style="width:180px;" name="currency"  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <select style="width:145px;" name="currency"  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <option class="dropdown-item"  value="">Select Currency</option>
                         <option class="dropdown-item"  value="TRY">TRY</option>
                         <option class="dropdown-item" value="USD">USD</option>
