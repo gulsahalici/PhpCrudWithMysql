@@ -12,8 +12,8 @@
      
 <div class="container ">
 <center>
-    
-<div class="col-md-8">
+<div class="row">
+<div class="col-md-10">
     
     <h4>Add Component</h4>
     
@@ -54,7 +54,13 @@
     <?php include("addcomponent.php"); ?>
     
 </div>    
+   
+<div class="col-md-2">
+        
+    <a href="panels.php" class="btn btn-secondary" style="width:200px;">Show Panels</a>
     
+</div> 
+</div>
     <?php include("components.php"); ?>
     
             </center>
