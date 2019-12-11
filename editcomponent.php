@@ -73,6 +73,8 @@
             echo "<script type='text/javascript'>alert('Component Succesfully Updated.');</script>";
             
             header("location:homepage.php"); 
+        
+
 
         }
         else{

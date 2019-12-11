@@ -19,9 +19,11 @@ CREATE TABLE IF NOT EXISTS panels(
 );
 
 CREATE TABLE IF NOT EXISTS panelcontent(
+	pc_id INT NOT NULL AUTO_INCREMENT,
 	panel_id INT NOT NULL,
     component_id INT NOT NULL,
     component_number INT NOT NULL,
+    PRIMARY KEY(pc_id),
     FOREIGN KEY (panel_id) REFERENCES panels(panelId),
     FOREIGN KEY (component_id) REFERENCES components(componentId)
 );
