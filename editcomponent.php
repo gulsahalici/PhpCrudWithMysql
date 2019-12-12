@@ -72,7 +72,10 @@
 
             echo "<script type='text/javascript'>alert('Component Succesfully Updated.');</script>";
             
-            header("location:homepage.php"); 
+            ?>   <script type="text/javascript">
+            window.location.assign("http://localhost/envest/homepage.php")
+            </script>
+            <?php 
         
 
 

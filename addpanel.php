@@ -20,7 +20,7 @@
 <div class="col-md-12">
     
     <h4>Add Panel</h4>
-    <form action="panels.php" method="post">
+    <form action="" method="post">
     
         <table class="table" id="panel">    
             <tr>
@@ -102,31 +102,48 @@ if (isset($_POST['addpanel'])) {
     $panelname = $_POST['panelname']; 
     $profitMargin=$_POST['profitMargin'];
     $compnumber=$_POST['cmpnumber1'];
+    $q=1;
+    $dnuminsert=0;
+    $dnum=0;
+    $x="drpdwn";
+    $y="cmpnumber";
     
-    if ($panelname!="" && $profitMargin!="" && $compnumber!="") { 
+    for($q=1; $q<100; $q++){
+        
+        if(isset($_POST[$y.$q])){
+           
+            if($_POST[$y.$q]!=null)
+                $dnuminsert=$dnuminsert+1;
+        
+            $dnum=$dnum+1;
+        }
+        }
+        
+    
+    if ($panelname!="" && $profitMargin!="" && $dnum==$dnuminsert ) { 
     
      $addpanel="INSERT INTO panels (panelName, profitMargin) VALUES ('$panelname','$profitMargin')";
     
       mysqli_query($conn,$addpanel); 
       $panelid=mysqli_insert_id($conn);
 
-    $q=1;
-    $x="drpdwn";
-    $y="cmpnumber";
+               
         for($q=1; $q<100; $q++){
         if((isset($_POST[$x.$q])!=null) && ($_POST[$y.$q]!=null) ){
+            
         $componentid= $_POST[$x.$q]; 
         $componentnumber=$_POST[$y.$q];
     
         $addcontent="INSERT INTO panelcontent (panel_id, component_id,component_number) VALUES ('$panelid','$componentid','$componentnumber')";   
         
         mysqli_query($conn,$addcontent); 
-        $q=$q+1;
         }
         }
         echo "<script type='text/javascript'>alert('Panel Added.');</script>";
-        // header('Location:http://localhost/envest/panels.php');
-        
+          ?>   <script type="text/javascript">
+            window.location.assign("http://localhost/envest/panels.php")
+            </script>
+            <?php 
     }
 
 else{

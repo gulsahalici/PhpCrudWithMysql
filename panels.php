@@ -19,8 +19,11 @@
 <div class="row">
 <div class="col-md-12">
     <h4>PANELS</h4>  
-    <input class="addCF btn btn-secondary" style="widt:300px;"  type="submit" value="Add Component To The Panel" name="addcomp">
- <br><br>
+    <br>
+    <form action="addpanel.php">
+    <input class="addCF btn btn-secondary" style="widt:300px;"  type="submit" value="Add New Panel" name="addcomp">
+    </form>
+        <br>
     
         <?php
         //Panels table's datas
@@ -73,7 +76,7 @@
         </tr>
         <tr>
                 <td>PANEL PROFIT MARGIN = % <?php echo $profitmargin ?></td>
-                <td><input class="addCF btn btn-danger" style="width:100px;"  type="submit" value="Delete" name="addcomp"></td>
+                <td><a href="deletepanel.php?id=<?php echo $panelid; ?>" class="btn btn-danger"  onclick="return window.confirm('Are you sure delete this panel?');">Delete</a></td>
                 </tr>
        </table><?php
         }

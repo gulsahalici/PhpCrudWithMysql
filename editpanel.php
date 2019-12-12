@@ -83,7 +83,7 @@
         <?php
         }
         ?>
-    <input class="btn btn-primary" style="widt:300px;"  type="submit" value="Save Changes" name="edit">
+    <input class="btn btn-primary" style="widt:300px;"  type="submit" value="Save Changes" name="edit" >
     </form>
     
     
@@ -143,7 +143,10 @@ if (isset($_POST['edit'])) {
         }
         
         echo "<script type='text/javascript'>alert('Panel Succesfully Updated.');</script>";
-         
+       ?>   <script type="text/javascript">
+            window.location.assign("http://localhost/envest/panels.php")
+            </script>
+    <?php
     }
         else{
                     echo "<script type='text/javascript'>alert('Please Fill In All Fields!');</script>";
