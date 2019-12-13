@@ -56,7 +56,9 @@
 </div>    
    
 <div class="col-md-2">
-        
+    
+    <a href="salestransactions.php" class="btn btn-info" style="width:200px;">Sales Transactions</a><br><br>
+    
     <a href="panels.php" class="btn btn-secondary" style="width:200px;">Show Panels</a>
     
 </div> 
